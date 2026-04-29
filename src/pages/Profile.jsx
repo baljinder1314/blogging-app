@@ -99,7 +99,7 @@ const Profile = () => {
     <div className="min-h-screen bg-gray-100 py-10 px-4">
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-sm overflow-hidden">
         {/* Header */}
-        <div className="bg-gradient-to-r from-black to-white h-32"></div>
+        <div className="bg-linear-to-r from-black to-white h-32"></div>
 
         {/* Profile Info */}
         <div className="px-6 pb-8 relative">

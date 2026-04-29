@@ -119,7 +119,7 @@ const Dashboard = () => {
         {/* Profile Card */}
         <div className="bg-white rounded-2xl shadow-sm p-6 flex flex-col sm:flex-row gap-6 items-start">
           {/* Avatar */}
-          <div className="relative flex-shrink-0">
+          <div className="relative shrink-0">
             {userData?.profileImage ? (
               <img
                 src={userData.profileImage}
@@ -207,7 +207,7 @@ const Dashboard = () => {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[700px] text-left">
+            <table className="w-full min-w-175 text-left">
               <thead>
                 <tr className="border-b text-gray-500">
                   <th className="py-3">Title</th>
@@ -279,7 +279,7 @@ const Dashboard = () => {
       {/* Upload Modal */}
       {showModal && (
         <div className="fixed inset-0 bg-black/40 flex justify-center items-center z-50">
-          <div className="bg-white rounded-2xl p-6 w-[400px] space-y-4">
+          <div className="bg-white rounded-2xl p-6 w-100 space-y-4">
             <h2 className="text-xl font-bold">Upload Profile Image</h2>
 
             <input type="file" accept="image/*" onChange={handleFileChange} />
