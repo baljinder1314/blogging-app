@@ -8,7 +8,8 @@ export default defineConfig({
   server: {
     proxy: {
       "/api/auth": {
-        target: "https://blogging-plateform.onrender.com",
+        target:
+          "https://blogging-plateform.onrender.com" || "http://localhost:3000",
         changeOrigin: true,
         secure: false,
       },

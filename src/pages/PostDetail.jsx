@@ -140,7 +140,7 @@ function PostDetail() {
         <h2 className="text-2xl font-bold mb-5">Comments</h2>
 
         {/* Add Comment */}
-        <form onSubmit={handleComment} className="flex gap-3 mb-6">
+        <form onSubmit={handleComment} className="flex gap-3 mb-6 flex-col md:flex-row ">
           <input
             type="text"
             value={text}
@@ -152,7 +152,7 @@ function PostDetail() {
           <button
             type="submit"
             disabled={commentLoading}
-            className="bg-black text-white px-5 rounded-xl disabled:opacity-50"
+            className="bg-black text-white px-5 py-3 rounded-xl disabled:opacity-50"
           >
             {commentLoading ? "Adding..." : "Comment"}
           </button>
@@ -196,8 +196,6 @@ function PostDetail() {
                     {new Date(comment.createdAt).toLocaleDateString()}
                   </p>
                 </div>
-
-                {/* Delete Button */}
                 <button
                   onClick={() => handleDeleteComment(comment._id)}
                   disabled={commentLoading}
@@ -205,6 +203,8 @@ function PostDetail() {
                 >
                   Delete
                 </button>
+
+                {/* Delete Button */}
               </div>
             ))}
           </div>
