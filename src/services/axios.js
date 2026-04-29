@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL:"https://blogging-plateform.onrender.com/api/auth",
+  baseURL: `${import.meta.env.VITE_API_URL}/api/auth`,
   withCredentials: true,
 });
 
@@ -15,14 +15,14 @@ api.interceptors.response.use(
 
       try {
         await axios.post(
-          "https://blogging-plateform.onrender.com/api/auth/refresh-token",
+          `${import.meta.env.VITE_API_URL}/auth/refresh-token`,
           {},
           { withCredentials: true },
         );
 
         return api(originalRequest);
       } catch (err) {
-        console.log(err)
+        console.log(err);
         // window.location.href = "/login";
       }
     }
