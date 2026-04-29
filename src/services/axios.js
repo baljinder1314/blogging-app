@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: `${import.meta.env.VITE_API_URL}/api/auth`,
+  baseURL:
+    `${import.meta.env.VITE_API_URL}/api/auth` ||
+    `https://blogging-plateform.onrender.com/api/auth`,
   withCredentials: true,
 });
 
@@ -15,7 +17,8 @@ api.interceptors.response.use(
 
       try {
         await axios.post(
-          `${import.meta.env.VITE_API_URL}/api/auth/refresh-token`,
+          `${import.meta.env.VITE_API_URL}/api/auth/refresh-token` ||
+            `https://blogging-plateform.onrender.com/api/auth/refresh-token`,
           {},
           { withCredentials: true },
         );
