@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_BASE_URI,
+  baseURL:"https://blogging-plateform.onrender.com/api/auth",
   withCredentials: true,
 });
 
@@ -15,7 +15,7 @@ api.interceptors.response.use(
 
       try {
         await axios.post(
-          "http://localhost:3000/api/auth/refresh-token",
+          "https://blogging-plateform.onrender.com/api/auth/refresh-token",
           {},
           { withCredentials: true },
         );
