@@ -15,6 +15,8 @@ function PostDetail() {
     (state) => state.comments,
   );
 
+  
+
   const [text, setText] = useState("");
 
   useEffect(() => {
@@ -103,6 +105,12 @@ function PostDetail() {
       >
         ← Back
       </Link>
+      <Link
+        to={`/edit-post/${currentPost?.post?._id}`}
+        className="inline-block mb-4  px-2 py-1 bg-black text-white rounded-xl cursor-pointer"
+      >
+        Edit
+      </Link>
 
       {/* Post */}
       <div className="bg-white rounded-2xl shadow-md overflow-hidden">
@@ -140,7 +148,10 @@ function PostDetail() {
         <h2 className="text-2xl font-bold mb-5">Comments</h2>
 
         {/* Add Comment */}
-        <form onSubmit={handleComment} className="flex gap-3 mb-6 flex-col md:flex-row ">
+        <form
+          onSubmit={handleComment}
+          className="flex gap-3 mb-6 flex-col md:flex-row "
+        >
           <input
             type="text"
             value={text}
